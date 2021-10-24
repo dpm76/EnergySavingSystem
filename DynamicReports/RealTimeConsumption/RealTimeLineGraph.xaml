@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="DynamicReports.RealTimeConsumption.RealTimeLineGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"             
+    Height="300" Width="400">   
+    <Border Background="Black">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".9*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row ="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".8*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>                
+                    <Canvas                    
+                        Grid.Column="1"
+                        x:Name="GraphCanvas"
+                        ClipToBounds="True"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Margin="10">
+
+                    <Polyline Canvas.Left="0" Name="GraphAxis"
+                              StrokeLineJoin="Round" Stroke="Orange" 
+                              StrokeThickness="2">                        
+                    </Polyline>
+
+                    <Polyline x:Name="GraphLine" Canvas.Left="0" 
+                              StrokeLineJoin="Round" Stroke="Orange" 
+                              StrokeThickness="4">
+                            <Polyline.Points>
+                                <Point X="0" Y="7" />
+                                <Point X="75" Y="200" />
+                                <Point X="150" Y="75" />
+                                <Point X="293" Y="7" />
+                            </Polyline.Points>
+                        </Polyline>
+                        <Ellipse x:Name="LastPoint" Fill="White" Width="14" Height="14" Canvas.Top="0" Canvas.Right="0" ClipToBounds="False"/>
+                    </Canvas>                
+                <Canvas Grid.Column="0" Name="LabelValues">
+                    <Label HorizontalContentAlignment="Right"
+                           ClipToBounds="True"
+                           Canvas.Top="0"
+                           Canvas.Right="0"
+                           Foreground="Orange"
+                           Name="MaxValueLabel">
+                        Max value
+                    </Label>
+                    <Label HorizontalContentAlignment="Right"
+                           Canvas.Bottom="0"
+                           Canvas.Right="0"
+                           Foreground="Orange"
+                           ClipToBounds="True">
+                        0                    
+                    </Label>
+                </Canvas>
+            </Grid>
+        </Grid>  
+    </Border>
+</UserControl>

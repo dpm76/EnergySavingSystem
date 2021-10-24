@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="AdvisorTool.WeekModelEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="300" Width="600">
+    <Grid>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Por defecto"/>
+                <Button Name="DefaultDayModelButton" Grid.Column="1" Content="E" Click="OnDefaultDayModelButtonClick" />
+            </Grid>
+            <TextBlock/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="WorkingDayModelCheckBox" Grid.Column="0" Content="Laborable" Checked="OnWorkingDayModelCheckBoxChecked" Unchecked="OnWorkingDayModelCheckBoxUnchecked" />
+                <Button Name="WorkingDayModelButton" Grid.Column="1" Content="E" Click="OnWorkingDayModelButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="HolidayDayModelCheckBox" Grid.Column="0" Content="Festivo" Unchecked="OnHolidayDayModelCheckBoxUnchecked" Checked="OnHolidayDayModelCheckBoxChecked" />
+                <Button Name="HolidayModelButton" Grid.Column="1" Content="E" Click="OnHolidayModelButtonClick" />
+            </Grid>
+
+            <TextBlock/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="MondayCheckBox"  Grid.Column="0" Content="Lunes" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="MondayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name ="TuesdayCheckBox" Grid.Column="0" Content="Martes" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="TuesdayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="WednesdayCheckBox" Grid.Column="0" Content="Miércoles" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="WednesdayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="ThursdayCheckBox" Grid.Column="0" Content="Jueves" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="ThursdayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="FridayCheckBox" Grid.Column="0" Content="Viernes" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="FridayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="SaturdayCheckBox" Grid.Column="0" Content="Sábado" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="SaturdayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox Name="SundayCheckBox" Grid.Column="0" Content="Domingo" Checked="OnDayOfWeekCheckBoxChecked" Unchecked="OnDayOfWeekCheckBoxUnchecked" />
+                <Button Name="SundayButton" Grid.Column="1" Content="E" Click="OnDayOfWeekButtonClick" />
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

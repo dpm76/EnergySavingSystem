@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsumptionDaemon.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReadCurrentPowerInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4000</Value>
+    </Setting>
+    <Setting Name="PollingQPowerInterval" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+    <Setting Name="DataBasePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ESSDataBase.sdf</Value>
+    </Setting>
+    <Setting Name="ListenPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50100</Value>
+    </Setting>
+    <Setting Name="PreviousModelDirectoryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\PreviousModel</Value>
+    </Setting>
+    <Setting Name="SavingModelDirectoryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\SavingModel</Value>
+    </Setting>
+    <Setting Name="PowerCostFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PowerCosts.xml</Value>
+    </Setting>
+    <Setting Name="LicenseCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ESS_Server</Value>
+    </Setting>
+    <Setting Name="LicenseFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ESS_Server.lic</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

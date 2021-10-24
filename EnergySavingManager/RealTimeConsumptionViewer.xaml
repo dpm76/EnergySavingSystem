@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="EnergySavingManager.RealTimeConsumptionViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:RealTimeConsumption="clr-namespace:DynamicReports.RealTimeConsumption;assembly=DynamicReports" xmlns:BarChart="clr-namespace:DynamicReports.BarChart;assembly=DynamicReports" 
+             Height="150" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    Background="CornflowerBlue">            
+            <Label Foreground="White">
+                Consumo actual
+            </Label>
+            <Label Foreground="White">-</Label>
+            <Label Name="SourceName" Foreground="White">Source Name</Label>
+        </StackPanel>
+        
+        <RealTimeConsumption:RealTimeLineGraph Name="LineGraph"  Grid.Row="1" Grid.Column="0" />
+        <BarChart:BarGraph Name="BarGraph" Grid.Row="1" Grid.Column="1" />
+        
+    </Grid>
+</UserControl>

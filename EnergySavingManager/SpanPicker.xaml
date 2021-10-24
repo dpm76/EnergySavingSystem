@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="EnergySavingManager.SpanPicker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="150" Width="800">    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>            
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button Name="HourButton" Grid.Row="1" Click="OnHourButtonClick" HorizontalAlignment="Left" Width="25">
+            <Image Source="./Resources/clock.png" />
+        </Button>
+        <Button Name="DayButton" Grid.Row="1" Grid.Column="1" Click="OnDayButtonClick">
+            <Image Source="./Resources/day.png"/>
+        </Button>
+        <Button Name="WeekButton" Grid.Row="1" Grid.Column="2" Click="OnWeekButtonClick">
+            <Image Source="./Resources/week.png" />
+        </Button>
+        <Button Name="MonthButton" Grid.Row="1" Grid.Column="3" Click="OnMonthButtonClick">
+            <Image Source="./Resources/month.png" />
+        </Button>        
+        
+        <Border Grid.Row="1" Grid.Column="5" Background="CornflowerBlue">
+            <Label Name="SelectedSpanTimeLabel" 
+                   Foreground="White"
+                   HorizontalContentAlignment="Right">
+                2/3/2011 22:00 - 3/3/2011 3:00
+            </Label>
+        </Border>
+        
+        <Grid Grid.Row="0" Grid.ColumnSpan="6">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".05*" />
+                <ColumnDefinition Width=".8*" />
+                <ColumnDefinition Width=".05*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Name="LeftButton" Grid.Column="0" Click="OnLeftButtonClick">
+                <Image Source="./Resources/back.png" Stretch="Uniform" Height="16" Width="16" />
+            </Button>
+            
+            <Canvas Name="SpanTimeCanvas" Margin="0" Grid.Column="1">
+                <Line Name="TimeAxis" 
+                      Stroke="Blue"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Square"
+                      StrokeEndLineCap="Square"
+                      X1="0" Y1="63" 
+                      X2="710" Y2="63" Height="78" />
+                
+                <Rectangle Name="SelectedSpanRectangle"
+                           Stroke="Blue"
+                           StrokeThickness="1"
+                           StrokeLineJoin="Round"
+                           Fill="LightBlue"
+                           Canvas.Top="0"                           
+                           Canvas.Left="50"
+                           Width="200"
+                           Height="126"
+                           Opacity=".6" MouseEnter="OnSelectedSpanRectangleMouseEnter" MouseLeave="OnSelectedSpanRectangleMouseLeave" MouseMove="OnSelectedSpanRectangleMouseMove" MouseLeftButtonDown="OnSelectedSpanRectangleMouseLeftButtonDown" MouseLeftButtonUp="OnSelectedSpanRectangleMouseLeftButtonUp" />
+                <Line Name="LeftTimeGrabber"
+                      Stroke="RoyalBlue"
+                      StrokeThickness="6"
+                      StrokeStartLineCap="Triangle"
+                      StrokeEndLineCap="Triangle"
+                      X1="50" Y1="56"
+                      X2="50" Y2="70" MouseEnter="OnTimeGrabberMouseEnter" MouseLeave="OnTimeGrabberMouseLeave" MouseMove="OnTimeGrabberMouseMove" MouseUp="OnTimeGrabberMouseUp" />
+                
+                <Line Name="RightTimeGrabber"
+                      Stroke="RoyalBlue"
+                      StrokeThickness="6"
+                      StrokeStartLineCap="Triangle"
+                      StrokeEndLineCap="Triangle"
+                      X1="250" Y1="56"
+                      X2="250" Y2="70" MouseEnter="OnTimeGrabberMouseEnter" MouseLeave="OnTimeGrabberMouseLeave" MouseMove="OnTimeGrabberMouseMove" MouseUp="OnTimeGrabberMouseUp" />
+                
+                <Line Name="SelectSpanLine"
+                      Stroke="RoyalBlue"
+                      StrokeThickness="6"
+                      StrokeStartLineCap="Flat"
+                      StrokeEndLineCap="Flat"
+                      X1="50" Y1="63"
+                      X2="250" Y2="63" />
+                
+            </Canvas>
+
+            <Button Name="RightButton" Grid.Column="2" Click="OnRightButtonClick">
+                <Image Source="./Resources/forward.png" Stretch="Uniform" Height="16" Width="16" />
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

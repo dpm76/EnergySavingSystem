@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EnergySavingManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RealTimeDataPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50101</Value>
+    </Setting>
+    <Setting Name="ConsumptionListenerHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="ConsumptionListenerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50100</Value>
+    </Setting>
+    <Setting Name="PeriodType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Monthly</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="EnergySavingManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:EnergySavingManager="clr-namespace:EnergySavingManager" xmlns:BarChart="clr-namespace:DynamicReports.BarChart;assembly=DynamicReports" xmlns:Alerts="clr-namespace:EnergySavingManager.Alerts" Title="Herramienta de gestión" Width="800" Height="600" Icon="/EnergySavingManager;component/Resources/ESS.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.75*" />            
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="White" ClipToBounds="True">
+            <Image HorizontalAlignment="Right" Source="Resources\logo.png"/>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".25*" />
+                    <ColumnDefinition Width=".75*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                        BorderBrush="RoyalBlue"
+                        BorderThickness="2"
+                        Background="#ffc8f8ff">
+                    <EnergySavingManager:CostViewer x:Name="CostViewer" />
+                </Border>
+                <Border BorderBrush="RoyalBlue" BorderThickness="2" Grid.Column="1" >
+                    <EnergySavingManager:RealTimeConsumptionViewer x:Name="CurrentConsumptionViewer" />
+                </Border>
+            </Grid>
+        </Border>
+        
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*" />
+                <RowDefinition Height="0.25*" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".25*" />
+                <ColumnDefinition Width=".75*" />
+            </Grid.ColumnDefinitions>
+            
+            <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                    BorderBrush="RoyalBlue" BorderThickness="2" Background="White">
+                <Alerts:NotificationsContainer x:Name="AlertsContainer" />
+            </Border>
+            <BarChart:BarGraph Name="HistoricViewer" Grid.Row="0" Grid.Column="1"/>
+            <EnergySavingManager:SpanPicker x:Name="SpanPicker" Grid.Row="1" Grid.Column="1" />
+            
+        </Grid>
+    </Grid>
+</Window>

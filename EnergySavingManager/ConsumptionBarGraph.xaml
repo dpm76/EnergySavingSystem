@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="EnergySavingManager.ConsumptionBarGraph"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:BarChart="clr-namespace:DynamicReports.BarChart;assembly=DynamicReports" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height=".9*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <ToolBar>
+                <Button ToolTip="Atrás">
+                    <Image Source="Resources\back.png" Width="16" Height="16"/>
+                </Button>
+                <Button ToolTip="Adelante">
+                    <Image Source="Resources\forward.png"  Width="16" Height="16"/>
+                </Button>
+                <Button ToolTip="Aumentar">
+                    <Image Source="Resources\zoomin.png"  Width="16" Height="16"/>
+                </Button>
+                <Button ToolTip="Reducir">
+                    <Image Source="Resources\zoomout.png"  Width="16" Height="16"/>
+                </Button>
+                <Separator/>
+                <Button>Mostrar consumo</Button>
+                <Button>Mostrar modelo actual</Button>
+                <Button>Mostrar modelo eficiente</Button>
+                <Separator/>
+                <Button>Consumo</Button>
+                <Button>Actual</Button>
+                <Button>Eficiente</Button>                
+            </ToolBar>
+        </Grid>
+        <BarChart:BarGraph Grid.Row="1" Name="BarGraph" />            
+    </Grid>
+</UserControl>
