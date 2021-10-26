@@ -9,9 +9,6 @@ using ConsumptionDaemon.Properties;
 using ConsumptionModelling;
 using ConsumptionModelling.Alerts;
 using EnergyConsumption;
-using Licensing;
-using Licensing.Activation;
-using Licensing.PlatformDependent;
 using NLog;
 
 namespace ConsumptionDaemon
@@ -160,44 +157,21 @@ namespace ConsumptionDaemon
         {
             LogManager.GetCurrentClassLogger().Info("********** INICIANDO EJECUCIÓN **********");
 
-            LogManager.GetCurrentClassLogger().Trace("Iniciando gestor de licencia");
-            LicensingManager.Instance.ActivationBroker = new ManualActivationBroker();
-            LicensingManager.Instance.LicenseCode = Settings.Default.LicenseCode;
-            LicensingManager.Instance.Key = Resources.publicKey;
-
-            LicenseStatus licenseStatus = LicensingManager.Instance.ValidateStoredActivationCode();
-            LogManager.GetCurrentClassLogger().Trace(string.Format("Estado actual de la licencia: {0}", licenseStatus));
-            if((licenseStatus != LicenseStatus.Licensed) && File.Exists(Settings.Default.LicenseFilePath))
+            LogManager.GetCurrentClassLogger().Trace("Abriendo conexión con base de datos en " +
+                                                        Settings.Default.DataBasePath);
+            this._dbConnection.Open();
+            foreach (DataReader dataReader in _dataReaderCollection.Values)
             {
-                licenseStatus =
-                    LicensingManager.Instance.ValidateActivationCode(File.ReadAllText(Settings.Default.LicenseFilePath));
-                LogManager.GetCurrentClassLogger().Trace(string.Format("Probando licencia con fichero '{0}', estado: {1}", Settings.Default.LicenseFilePath, licenseStatus));
-            }
-
-            if(licenseStatus == LicenseStatus.Licensed)
-            {
-                LogManager.GetCurrentClassLogger().Info(string.Format("Licencia correcta: licencia = '{0}'", Settings.Default.LicenseCode));
-
-                LogManager.GetCurrentClassLogger().Trace("Abriendo conexión con base de datos en " +
-                                                         Settings.Default.DataBasePath);
-                this._dbConnection.Open();
-                foreach (DataReader dataReader in _dataReaderCollection.Values)
+                try
                 {
-                    try
-                    {
-                        dataReader.Start();
-                    }catch(Exception ex)
-                    {
-                        LogManager.GetCurrentClassLogger().ErrorException(string.Format("No se ha podido iniciar el lector de datos de tipo '{0}'",dataReader.GetType()), ex);
-                    }
+                    dataReader.Start();
+                }catch(Exception ex)
+                {
+                    LogManager.GetCurrentClassLogger().ErrorException(string.Format("No se ha podido iniciar el lector de datos de tipo '{0}'",dataReader.GetType()), ex);
                 }
-                LogManager.GetCurrentClassLogger().Trace("Iniciando listener");
-                this._listener.Start();
             }
-            else
-            {
-                LogManager.GetCurrentClassLogger().Info(string.Format("Licencia no válida. ID de dispositivo: {0}", DeviceIdGetter.Instance.GetDeviceId().ToString("x")));
-            }
+            LogManager.GetCurrentClassLogger().Trace("Iniciando listener");
+            this._listener.Start();            
         }
 
         /// <summary>

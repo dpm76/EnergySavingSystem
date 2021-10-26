@@ -86,10 +86,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\LicensingManager\Licensing\Licensing.csproj">
-      <Project>{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}</Project>
-      <Name>Licensing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Communication\Communication.csproj">
       <Project>{C2216746-6B08-403C-A9A3-E45F16B44B46}</Project>
       <Name>Communication</Name>
@@ -113,7 +109,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\publicKey.bin" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ESSDataBase.sdf">

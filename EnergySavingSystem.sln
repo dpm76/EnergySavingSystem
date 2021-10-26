@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicensingSystem", "LicensingSystem", "{6D4BE0DD-A730-40B0-861B-5D02CA35AE9A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergySavingManager", "EnergySavingManager\EnergySavingManager.csproj", "{5A2277BE-2D41-4F45-B4B7-484619EC3C3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyConsumption", "EnergyConsumption\EnergyConsumption.csproj", "{3DD32A04-E4DE-46C0-AA44-80535F3C5027}"
@@ -23,13 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumptionModelling", "Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumptionDaemon", "ConsumptionDaemon\ConsumptionDaemon.csproj", "{EF2536F3-6764-48C2-8DBC-5ABF50EDA7B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licensing", "..\LicensingManager\Licensing\Licensing.csproj", "{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivationCode", "..\LicensingManager\ActivationCode\ActivationCode.csproj", "{0149453E-31C0-4EC5-A3E6-8D5765D7D00E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvisorTool", "AdvisorTool\AdvisorTool.csproj", "{7880FCEF-F552-4978-80F0-40CBB733F1C4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsnKeys", "..\LicensingManager\AsnKeys\AsnKeys.csproj", "{0575B914-CA19-4EE1-8AD1-394B5A704F6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,30 +65,13 @@ Global
 		{EF2536F3-6764-48C2-8DBC-5ABF50EDA7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF2536F3-6764-48C2-8DBC-5ABF50EDA7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF2536F3-6764-48C2-8DBC-5ABF50EDA7B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0149453E-31C0-4EC5-A3E6-8D5765D7D00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0149453E-31C0-4EC5-A3E6-8D5765D7D00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0149453E-31C0-4EC5-A3E6-8D5765D7D00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0149453E-31C0-4EC5-A3E6-8D5765D7D00E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7880FCEF-F552-4978-80F0-40CBB733F1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7880FCEF-F552-4978-80F0-40CBB733F1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7880FCEF-F552-4978-80F0-40CBB733F1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7880FCEF-F552-4978-80F0-40CBB733F1C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0575B914-CA19-4EE1-8AD1-394B5A704F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0575B914-CA19-4EE1-8AD1-394B5A704F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0575B914-CA19-4EE1-8AD1-394B5A704F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0575B914-CA19-4EE1-8AD1-394B5A704F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3E78DF3B-30D3-4236-87F2-42AAF8EE02F8} = {6D4BE0DD-A730-40B0-861B-5D02CA35AE9A}
-		{0149453E-31C0-4EC5-A3E6-8D5765D7D00E} = {6D4BE0DD-A730-40B0-861B-5D02CA35AE9A}
-		{0575B914-CA19-4EE1-8AD1-394B5A704F6E} = {6D4BE0DD-A730-40B0-861B-5D02CA35AE9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B525F42B-64E9-411B-BE1A-D949CED299C7}

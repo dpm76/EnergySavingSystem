@@ -59,15 +59,5 @@ namespace ConsumptionDaemon {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
-        /// </summary>
-        internal static byte[] publicKey {
-            get {
-                object obj = ResourceManager.GetObject("publicKey", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
